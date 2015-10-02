@@ -1,0 +1,12 @@
+{
+    "name": "ibonly/evangelists",
+    "description": "An API that analysis the contributions of a Github users",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andela-iadeniyi",
+            "email": "ibraheem.adeniyi@andela.com"
+        }
+    ],
+    "require": {}
+}
