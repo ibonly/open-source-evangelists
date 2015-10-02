@@ -8,5 +8,7 @@
             "email": "ibraheem.adeniyi@andela.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpunit/phpunit": "^5.0"
+    }
 }
