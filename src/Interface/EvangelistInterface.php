@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibonly\GithubStatusEvangelist\;
+namespace Ibonly\GithubStatusEvangelist;
 
 interface EvangelistInterface
 {

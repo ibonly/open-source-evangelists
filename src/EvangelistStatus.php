@@ -3,7 +3,7 @@
 *
 */
 
-namespace Ibonly\GithubStatusEvangelist\;
+namespace Ibonly\GithubStatusEvangelist;
 
 class EvangelistStatus
 {
