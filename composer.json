@@ -1,0 +1,16 @@
+{
+    "name": "iadeniyi/github-user-status-evangelist",
+    "description": "A package that grade a github user based on the user's contribution on open source project.",
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "guzzlehttp/guzzle": "4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adeniyi Ibraheem",
+            "email": "ibonly01@gmail.com"
+        }
+    ],
+    "require": {}
+}
