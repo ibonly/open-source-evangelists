@@ -17,6 +17,11 @@ class EvangelistRank implements EvangelistRankInterface
     protected $senior;
     protected $output;
 
+    /**
+     * Define the arguments needed
+     * @param NULL
+     */
+
     public function __construct($data)
     {
         $this->data = $data;
@@ -27,44 +32,78 @@ class EvangelistRank implements EvangelistRankInterface
 
     }
 
+    /**
+     * Get the value from the class instatiations
+     *
+     * @return Integer
+     */
+
     public function getData()
     {
         return $this->data;
     }
+
+    /**
+     * Get the value of getSeniorEvangelist()
+     *
+     * @return String
+     */
+
     public function getSeniorEvangelist()
     {
         return $this->senior;
     }
+
+    /**
+     * Get the value of getAssociateEvangelist()
+     *
+     * @return String
+     */
+
     public function getAssociateEvangelist()
     {
         return $this->associate;
     }
+
+    /**
+     *  Get the value of getJuniorEvangelist()
+     * @return String
+     */
+
     public function getJuniorEvangelist()
     {
         return $this->junior;
     }
+
+    /**
+     *  Get the value of getZeroEvangelist()
+     * @return String
+     */
+
     public function getZeroEvangelist()
     {
         return $this->zeroEvangelist;
     }
-    public function getZeroEvangelt()
-    {
-        return $this->zeroEvangelist;
-    }
+
+    /**
+     * getRating()
+     *
+     * @return String
+     */
 
     public function getRating()
     {
         switch ($this->getData()) {
-            case $this->getData() < 5:
+            case $this->getData() < 5:                              #check if getData() is less than 5
                 $output = $this->getZeroEvangelist();
                 break;
-            case $this->getData() >= 5 && $this->getData() <= 10:
+            case $this->getData() >= 5 && $this->getData() <= 10:   #check if getData() is between 5 and 10
                 $output = $this->getJuniorEvangelist();
                 break;
-            case $this->getData() >= 11 && $this->getData() <= 20:
+            case $this->getData() >= 11 && $this->getData() <= 20:  #check if getData() is between 11 and 20
                 $output = $this->getAssociateEvangelist();
                 break;
-            case $this->getData() >= 21:
+            case $this->getData() >= 21:                            #check if getData() is more than 20
                 $output = $this->getSeniorEvangelist();
         }
         return $output;
