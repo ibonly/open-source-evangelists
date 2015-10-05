@@ -7,13 +7,13 @@
 namespace Ibonly\GithubStatusEvangelist\Test;
 
 use PHPUnit_Framework_TestCase;
-use Ibonly\GithubStatusEvangelist\Evangelist;
+use Ibonly\GithubStatusEvangelist\EvangelistStatus;
 
 class UserStatusTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->evangelists = new Evangelist('andela-iadeniyi');
+        $this->evangelists = new EvangelistStatus('andela-iadeniyi');
     }
 
     public function testgetRepoNumberOutputIsInteger()
