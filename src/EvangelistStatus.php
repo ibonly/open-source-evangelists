@@ -36,7 +36,7 @@ class EvangelistStatus extends Client implements EvangelistInterface
         }
         catch(GuzzleException $e)
         {
-            return "Invalid input";
+            return "Github username does not exist";
         }
     }
 
@@ -46,14 +46,12 @@ class EvangelistStatus extends Client implements EvangelistInterface
         return $global_value['name'];
     }
 
-    public function getStatus()
+    public function getRepoNumber()
     {
         $global_value = $this->getAPIData();
         $userRepo = $global_value['public_repos'];
-        $rank = new EvangelistRank($userRepo);
-        return $rank->getRating();
+        return $userRepo;
     }
-
 
     public function getFollowers()
     {
@@ -67,5 +65,10 @@ class EvangelistStatus extends Client implements EvangelistInterface
         return $global_value['following'];
     }
 
+    public function getRank()
+    {
+        $rank = new EvangelistRank($this->getRepoNumber());
+        return $rank->getRating();
+    }
 
 }
