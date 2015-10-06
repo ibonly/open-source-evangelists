@@ -20,7 +20,6 @@ class EvangelistRank implements EvangelistRankInterface
     protected $junior;
     protected $associate;
     protected $senior;
-    protected $output;
 
     /**
      * Define the arguments needed
@@ -98,6 +97,7 @@ class EvangelistRank implements EvangelistRankInterface
 
     public function getRating()
     {
+        $ouput = "";
         switch ($this->getData()) {
             //if getData is less than 5
             case $this->getData() < 5:
