@@ -1,5 +1,5 @@
 {
-    "name": "iadeniyi/github-user-status-evangelist",
+    "name": "ibonly/open-source-evangelists",
     "description": "A package that grade a github user based on the user's contribution on open source project.",
     "license": "MIT",
     "authors": [
