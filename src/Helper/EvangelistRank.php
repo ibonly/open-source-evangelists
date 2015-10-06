@@ -1,8 +1,13 @@
 <?php
-
 /**
-*
-*/
+ * This package takes the GitHub username of an individual and rank based
+ * on the number of public repositories the user has as:
+ * Senior, Intermediate or Junior Evangelist.
+ *
+ * @package Ibonly\GithubStatusEvangelist\EvangelistRank
+ * @author  Ibraheem ADENIYI <ibonly01@gmail.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ */
 
 namespace Ibonly\GithubStatusEvangelist;
 use Ibonly\GithubStatusEvangelist\EvangelistRankInterface;
