@@ -1,7 +1,13 @@
 <?php
 /**
-*
-*/
+ * This package takes the GitHub username of an individual and rank based
+ * on the number of public repositories the user has as:
+ * Senior, Intermediate or Junior Evangelist.
+ *
+ * @package Ibonly\GithubStatusEvangelist\EvangelistStatus
+ * @author  Ibraheem ADENIYI <ibonly01@gmail.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ */
 
 namespace Ibonly\GithubStatusEvangelist;
 
@@ -30,30 +36,55 @@ class EvangelistStatus extends Client implements EvangelistInterface
             parent::__construct([$this->github_api]);
     }
 
+    /**
+     * Return the data recieved from the GITHUB API
+     *
+     * @return jsonArray
+     */
     public function getAPIData()
     {
         $output = $this->get($this->github_api);
         return $output->json();
     }
 
+    /**
+     * Get the name from the return data getAPIData
+     *
+     * @return string
+     */
     public function getName()
     {
         $global_value = $this->getAPIData();
         return $global_value['name'];
     }
 
+    /**
+     * Get the number of followers from the return data getAPIData
+     *
+     * @return Integer
+     */
     public function getFollowers()
     {
         $global_value = $this->getAPIData();
         return $global_value['followers'];
     }
 
+    /**
+     * Get the number of users following from the return data getAPIData
+     *
+     * @return Integer
+     */
     public function getFollowing()
     {
         $global_value = $this->getAPIData();
         return $global_value['following'];
     }
 
+    /**
+     * Get the number of repositories from the return data getAPIData
+     *
+     * @return Integer
+     */
     public function getRepoNumber()
     {
         $global_value = $this->getAPIData();
@@ -61,21 +92,22 @@ class EvangelistStatus extends Client implements EvangelistInterface
         return $userRepo;
     }
 
+    /**
+     * Get the rank message from EvangelistRank
+     *
+     * @return String
+     */
     public function getRank()
     {
         $rank = new EvangelistRank($this->getRepoNumber());
         return $rank->getRating();
     }
 
-    // public function invalidUser()
-    // {
-    //     $global_value = $this->getAPIData();
-    //     if( isset ($global_value['message']))
-    //     {
-    //         throw new InvalidUserException("User does not");
-    //     }
-    //}
-
+    /**
+     * Get the output
+     *
+     * @return String
+     */
     public function getStatus()
     {
         try{
