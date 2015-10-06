@@ -9,7 +9,6 @@ namespace Ibonly\GithubStatusEvangelist\Test;
 use PHPUnit_Framework_TestCase;
 use Ibonly\GithubStatusEvangelist\EvangelistStatus;
 use Exception;
-use GuzzleHttp\Exception\RequestException;
 
 class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
 {
