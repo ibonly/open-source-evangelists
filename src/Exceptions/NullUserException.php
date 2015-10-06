@@ -8,6 +8,7 @@
  */
 
 namespace Ibonly\GithubStatusEvangelist;
+
 use Exception;
 
 class NullUserException extends Exception

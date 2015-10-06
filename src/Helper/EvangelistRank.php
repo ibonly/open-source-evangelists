@@ -10,6 +10,7 @@
  */
 
 namespace Ibonly\GithubStatusEvangelist;
+
 use Ibonly\GithubStatusEvangelist\EvangelistRankInterface;
 
 class EvangelistRank implements EvangelistRankInterface
@@ -25,7 +26,6 @@ class EvangelistRank implements EvangelistRankInterface
      * Define the arguments needed
      * @param NULL
      */
-
     public function __construct($data)
     {
         $this->data = $data;
@@ -41,7 +41,6 @@ class EvangelistRank implements EvangelistRankInterface
      *
      * @return Integer
      */
-
     public function getData()
     {
         return $this->data;
@@ -52,7 +51,6 @@ class EvangelistRank implements EvangelistRankInterface
      *
      * @return String
      */
-
     public function getSeniorEvangelist()
     {
         return $this->senior;
@@ -63,7 +61,6 @@ class EvangelistRank implements EvangelistRankInterface
      *
      * @return String
      */
-
     public function getAssociateEvangelist()
     {
         return $this->associate;
@@ -73,7 +70,6 @@ class EvangelistRank implements EvangelistRankInterface
      *  Get the value of getJuniorEvangelist()
      * @return String
      */
-
     public function getJuniorEvangelist()
     {
         return $this->junior;
@@ -83,7 +79,6 @@ class EvangelistRank implements EvangelistRankInterface
      *  Get the value of getZeroEvangelist()
      * @return String
      */
-
     public function getZeroEvangelist()
     {
         return $this->zeroEvangelist;
@@ -94,7 +89,6 @@ class EvangelistRank implements EvangelistRankInterface
      *
      * @return String
      */
-
     public function getRating()
     {
         $output = "";
