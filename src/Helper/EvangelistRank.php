@@ -99,16 +99,20 @@ class EvangelistRank implements EvangelistRankInterface
     public function getRating()
     {
         switch ($this->getData()) {
-            case $this->getData() < 5:                              #check if getData() is less than 5
+            //if getData is less than 5
+            case $this->getData() < 5:
                 $output = $this->getZeroEvangelist();
                 break;
-            case $this->getData() >= 5 && $this->getData() <= 10:   #check if getData() is between 5 and 10
+            //if getData is between 5 and 10
+            case $this->getData() >= 5 && $this->getData() <= 10:
                 $output = $this->getJuniorEvangelist();
                 break;
-            case $this->getData() >= 11 && $this->getData() <= 20:  #check if getData() is between 11 and 20
+            //if getData is between 11 and 20
+            case $this->getData() >= 11 && $this->getData() <= 20:
                 $output = $this->getAssociateEvangelist();
                 break;
-            case $this->getData() >= 21:                            #check if getData() is more than 20
+            //if getData is greater than 21
+            case $this->getData() >= 21:
                 $output = $this->getSeniorEvangelist();
         }
         return $output;
