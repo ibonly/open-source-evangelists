@@ -8,10 +8,13 @@ This Package analysis the contributions of a Github users based on the number of
 It also ranks the user based on the author's perspective on the number of repositories individual user has.
 The ranking is shown bellow:
 
-        ` Number of Repository < 5 - Zero Evanglist`
-        ` 5 <= Number of Repository <= 10 - Junior Evanglist`
-        ` 11 <= Number of Repository <= 20 - Associate Evanglist`
-        ` Number of Repository >= 21 - Senior Evanglist`
+` Number of Repository < 5 - Zero Evanglist`
+
+` 5 <= Number of Repository <= 10 - Junior Evanglist`
+
+` 11 <= Number of Repository <= 20 - Associate Evanglist`
+
+` Number of Repository >= 21 - Senior Evanglist`
 
 
 ## Installation
