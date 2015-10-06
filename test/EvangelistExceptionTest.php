@@ -21,7 +21,8 @@ class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
      *
      * @return NULL
      */
-    public function sampleInput() {
+    public function sampleInput()
+    {
         return [['']];
     }
 
@@ -30,14 +31,16 @@ class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
      *
      * @expectedException Exception
      */
-    public function testNullInputException($username) {
+    public function testNullInputException($username)
+    {
         $evangelists = new EvangelistStatus($username);
     }
 
     /**
      * Test if Github username does not exist
      */
-    public function testInvalidUserException() {
+    public function testInvalidUserException()
+    {
         $evangelists = new EvangelistStatus('skfmfsdkds');
         $this->assertEquals("Invalid user", $evangelists->getStatus());
     }
