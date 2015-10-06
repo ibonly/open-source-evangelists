@@ -1,4 +1,11 @@
 <?php
+/**
+ * Defining Interface for class EvangelistStatus.
+ *
+ * @package Ibonly\GithubStatusEvangelist\EvangelistInterface
+ * @author  Ibraheem ADENIYI <ibonly01@gmail.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ */
 
 namespace Ibonly\GithubStatusEvangelist;
 
