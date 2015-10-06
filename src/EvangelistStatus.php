@@ -67,25 +67,27 @@ class EvangelistStatus extends Client implements EvangelistInterface
         return $rank->getRating();
     }
 
-    public function invalidUser()
-    {
-        $global_value = $this->getAPIData();
-        if( isset ($global_value['message']))
-        {
-            throw new InvalidUserException();
-        }
-    }
+    // public function invalidUser()
+    // {
+    //     $global_value = $this->getAPIData();
+    //     if( isset ($global_value['message']))
+    //     {
+    //         throw new InvalidUserException("User does not");
+    //     }
+    //}
 
     public function getStatus()
     {
-        $this->invalidUser();
-
+        try{
         $output = "Hello ".$this->getName();
         $output .= "<br />".$this->getRank();
         $output .= "<br />You have ". $this->getRepoNumber() ." Github Repositoris";
         $output .= "<br />You have ". $this->getFollowers() ." Followers";
         $output .= " and Following ". $this->getFollowing() ." Github Users";
         return $output;
+        }catch(InvalidUserException $e){
+            return "Invalid user";
+        }
     }
 
 }
