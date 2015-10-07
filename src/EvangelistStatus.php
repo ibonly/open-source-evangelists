@@ -29,11 +29,21 @@ class EvangelistStatus extends Client implements EvangelistInterface
             if(empty($username)) {
                 throw new NullUserException();
             }
-            $dotenv = new Dotenv(__DIR__ ."../../");
-            $dotenv->load();
             $this->username = $username;
-            $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".getenv('ClientID')."&client_secret=".getenv('ClientSecret');
+            $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".$this->getEnvData();
             parent::__construct([$this->github_api]);
+    }
+
+    /**
+     * Get the environment variables from .env using vlucas package
+     *
+     * @return String
+     */
+    public function getEnvData()
+    {
+        $dotenv = new Dotenv(__DIR__ ."../../");
+        $dotenv->load();
+        return getenv('ClientID')."&client_secret=".getenv('ClientSecret');
     }
 
     /**
@@ -54,8 +64,8 @@ class EvangelistStatus extends Client implements EvangelistInterface
      */
     public function getName()
     {
-        $global_value = $this->getAPIData();
-        return $global_value['name'];
+        $githubData = $this->getAPIData();
+        return $githubData['name'];
     }
 
     /**
@@ -65,8 +75,8 @@ class EvangelistStatus extends Client implements EvangelistInterface
      */
     public function getFollowers()
     {
-        $global_value = $this->getAPIData();
-        return $global_value['followers'];
+        $githubData = $this->getAPIData();
+        return $githubData['followers'];
     }
 
     /**
@@ -76,8 +86,8 @@ class EvangelistStatus extends Client implements EvangelistInterface
      */
     public function getFollowing()
     {
-        $global_value = $this->getAPIData();
-        return $global_value['following'];
+        $githubData = $this->getAPIData();
+        return $githubData['following'];
     }
 
     /**
@@ -87,8 +97,8 @@ class EvangelistStatus extends Client implements EvangelistInterface
      */
     public function getRepoNumber()
     {
-        $global_value = $this->getAPIData();
-        $userRepo = $global_value['public_repos'];
+        $githubData = $this->getAPIData();
+        $userRepo = $githubData['public_repos'];
         return $userRepo;
     }
 

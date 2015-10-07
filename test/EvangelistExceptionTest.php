@@ -12,7 +12,7 @@ namespace Ibonly\GithubStatusEvangelist\Test;
 
 use PHPUnit_Framework_TestCase;
 use Ibonly\GithubStatusEvangelist\EvangelistStatus;
-use Exception;
+use Ibonly\GithubStatusEvangelist\NullUserException;
 
 class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
 {
@@ -28,11 +28,10 @@ class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider sampleInput
-     *
-     * @expectedException Exception
      */
-    public function testNullInputException($username)
+    public function testNullUserException($username)
     {
+        $this->setExpectedException('\Ibonly\GithubStatusEvangelist\NullUserException');
         $evangelists = new EvangelistStatus($username);
     }
 

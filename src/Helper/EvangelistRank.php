@@ -24,7 +24,11 @@ class EvangelistRank implements EvangelistRankInterface
 
     /**
      * Define the arguments needed
-     * @param NULL
+     * @param data
+     * @param senior
+     * @param associate
+     * @param junior
+     * @param zeroEvangelist
      */
     public function __construct($data)
     {
@@ -37,7 +41,7 @@ class EvangelistRank implements EvangelistRankInterface
     }
 
     /**
-     * Get the value from the class instatiations
+     * Get the value from the class instatiation
      *
      * @return Integer
      */

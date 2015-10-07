@@ -4,7 +4,7 @@
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/andela-iadeniyi/open-source-evangelists/blob/master/LICENSE)
 [![Quality Score](https://img.shields.io/scrutinizer/g/andela-iadeniyi/open-source-evangelists.svg?style=flat-square)](https://scrutinizer-ci.com/g/andela-iadeniyi/open-source-evangelists)
 
-This Package analysis the contributions of a Github users based on the number of repositories a user has.
+This Package analyzes the contributions of a Github users based on the number of repositories a user has.
 It also ranks the user based on the author's perspective on the number of repositories individual user has.
 The ranking is shown bellow:
 
