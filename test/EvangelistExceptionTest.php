@@ -12,7 +12,6 @@ namespace Ibonly\GithubStatusEvangelist\Test;
 
 use PHPUnit_Framework_TestCase;
 use Ibonly\GithubStatusEvangelist\EvangelistStatus;
-use Ibonly\GithubStatusEvangelist\NullUserException;
 
 class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
 {
@@ -36,9 +35,9 @@ class EvangelistExceptionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if Github username does not exist
+     * Test if Github username does not exist GuzzleHttp\Exception\RequestException
      */
-    public function testInvalidUserException()
+    public function testInvalidUserExceptionMessage()
     {
         $evangelists = new EvangelistStatus('skfmfsdkds');
         $this->assertEquals("Invalid user", $evangelists->getStatus());

@@ -26,12 +26,12 @@ class EvangelistStatus extends Client implements EvangelistInterface
 
     public function __construct($username)
     {
-            if(empty($username)) {
-                throw new NullUserException();
-            }
-            $this->username = $username;
-            $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".$this->getEnvData();
-            parent::__construct([$this->github_api]);
+        if(empty($username)) {
+            throw new NullUserException();
+        }
+        $this->username = $username;
+        $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".$this->getEnvData();
+        parent::__construct([$this->github_api]);
     }
 
     /**
@@ -120,14 +120,14 @@ class EvangelistStatus extends Client implements EvangelistInterface
      */
     public function getStatus()
     {
-        try{
-        $output = "Hello ".$this->getName();
-        $output .= "<br />".$this->getRank();
-        $output .= "<br />You have ". $this->getRepoNumber() ." Github Repositoris";
-        $output .= "<br />You have ". $this->getFollowers() ." Followers";
-        $output .= " and Following ". $this->getFollowing() ." Github Users";
-        return $output;
-        }catch(InvalidUserException $e){
+        try {
+            $output = "Hello ".$this->getName();
+            $output .= "<br />".$this->getRank();
+            $output .= "<br />You have ". $this->getRepoNumber() ." Github Repositoris";
+            $output .= "<br />You have ". $this->getFollowers() ." Followers";
+            $output .= " and Following ". $this->getFollowing() ." Github Users";
+            return $output;
+        } catch ( InvalidUserException $e ) {
             return "Invalid user";
         }
     }
