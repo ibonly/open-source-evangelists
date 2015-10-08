@@ -25,7 +25,7 @@ class UserStatusTest extends PHPUnit_Framework_TestCase
     /**
      * Test to check if Number of repositories return Integer
      */
-    public function testgetRepoNumberOutputIsInteger()
+    public function testGetRepoNumberOutputIsInteger()
     {
         $this->assertInternalType("int", $this->evangelists->getRepoNumber());
     }
@@ -33,14 +33,14 @@ class UserStatusTest extends PHPUnit_Framework_TestCase
     /**
      * Test to check if Name return string
      */
-    public function testgetNameOutputIsInteger()
+    public function testGetNameOutputIsInteger()
     {
         $this->assertInternalType("string", $this->evangelists->getName());
     }
     /**
      * Test to check if follower return Integer
      */
-    public function testgetFollowersOutputIsInteger()
+    public function testGetFollowersOutputIsInteger()
     {
         $this->assertInternalType("int", $this->evangelists->getFollowers());
     }
@@ -48,7 +48,7 @@ class UserStatusTest extends PHPUnit_Framework_TestCase
     /**
      * Test to check if Following return Integer
      */
-    public function testgetFollowingOutputIsInteger()
+    public function testGetFollowingOutputIsInteger()
     {
         $this->assertInternalType("int", $this->evangelists->getFollowing());
     }
