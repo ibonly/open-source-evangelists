@@ -30,7 +30,8 @@ class EvangelistStatus extends Client implements EvangelistInterface
             throw new NullUserException();
         }
         $this->username = $username;
-        $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".$this->getEnvData();
+        $this->loadEnv();
+        $this->github_api = "https://api.github.com/users/{$this->username}?client_id=".getenv('ClientID')."&client_secret=".getenv('ClientSecret');
         parent::__construct([$this->github_api]);
     }
 
@@ -39,11 +40,10 @@ class EvangelistStatus extends Client implements EvangelistInterface
      *
      * @return String
      */
-    public function getEnvData()
+    public function loadEnv()
     {
         $dotenv = new Dotenv(__DIR__ ."../../");
         $dotenv->load();
-        return getenv('ClientID')."&client_secret=".getenv('ClientSecret');
     }
 
     /**
